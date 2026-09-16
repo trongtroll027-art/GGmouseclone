@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ggmouseclone">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Quyền hệ thống -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
@@ -12,8 +10,9 @@
         android:allowBackup="true"
         android:label="GG Mouse Clone"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        
-        <activity android:name=".MainActivity"
+
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +20,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Dịch vụ Accessibility để giả lập chạm -->
         <service
             android:name=".MyAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
@@ -34,7 +32,6 @@
                 android:resource="@xml/accessibility_service_config" />
         </service>
 
-        <!-- Dịch vụ Overlay -->
         <service
             android:name=".FloatingService"
             android:foregroundServiceType="specialUse"
